@@ -41,7 +41,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4390604387516112171}
-  - component: {fileID: 954815723981107082}
   m_Layer: 0
   m_Name: coin
   m_TagString: Untagged
@@ -66,28 +65,6 @@ Transform:
   - {fileID: 8380282131098884462}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &954815723981107082
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009716325937776529}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bca871bd3e92fa747aef434a3a49e65e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4820800428881702927
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,9 +201,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca471dfb72cda7a4baf0a16ac2ef27d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinCollectible
-  rotationSpeed: 100
+  coinValue: 0
+  duration: 3
+  c: {r: 0, g: 0, b: 0, a: 0}
   rend: {fileID: 7757153401372604342}
-  fadeDuration: 1
+  mshRend: {fileID: 0}
 --- !u!1 &6539666935451731967
 GameObject:
   m_ObjectHideFlags: 0

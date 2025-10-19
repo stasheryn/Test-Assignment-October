@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc48a41a1556c043a5e541026e53e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeIn
-  fadeDuration: 5
+  fadeDuration: 3
 --- !u!225 &1509915307
 CanvasGroup:
   m_ObjectHideFlags: 0

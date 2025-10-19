@@ -1,24 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement")]
-    public float moveSpeed = 5f;
+    [Header("Movement")] public float moveSpeed = 5f;
     public float jumpForce = 7f;
 
-    [Header("Ground Check")]
-    public Transform groundCheck;
+    [Header("Ground Check")] public Transform groundCheck;
     public float groundRadius = 0.2f;
     public LayerMask groundLayer;
-    
-    [SerializeField]private Renderer rend;
-    public Color normalColor = Color.white; // Колір на землі
-    public Color jumpColor = Color.red;     // Колір під час стрибка
 
-    [SerializeField]private Rigidbody rb;
-    [SerializeField]private InputActionAsset playerInput;
+    [SerializeField] private Renderer rend;
+    public Color normalColor = Color.white; // Колір на землі
+    public Color jumpColor = Color.red; // Колір під час стрибка
+
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private InputActionAsset playerInput;
     private InputAction moveAction;
     private InputAction jumpAction;
 
@@ -27,17 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        // rb = GetComponent<Rigidbody>();
-        // playerInput = GetComponent<PlayerInput>();
-
-        // Отримуємо дії за іменем (в asset вони мають точно так називатися)
+        // Отримуємо дії за іменем в inputActionAsset
         moveAction = playerInput.FindAction("Move");
         jumpAction = playerInput.FindAction("Jump");
 
         if (moveAction == null) Debug.LogError("Move action not found in PlayerInput.actions");
         if (jumpAction == null) Debug.LogError("Jump action not found in PlayerInput.actions");
-
-        // Опціонально — підписуємось на подію натискання, щоб точно впіймати jump
+        // Опціонально підписуємось на подію натискання, щоб точно впіймати jump
         jumpAction.performed += ctx => TryJump();
     }
 
